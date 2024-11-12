@@ -20,3 +20,27 @@ graph TD
     G --> H(Imprimir subgrupos)
     H --> F(Finalizar programa)
 ```
+
+```java
+private static List<String> obtenerIntegrantes(Scanner scanner) {
+    System.out.print("Ingrese la lista de integrantes separados por coma: ");
+    String inputIntegrantes = scanner.nextLine();
+    List<String> integrantes = new ArrayList<>();
+    for (String integrante : inputIntegrantes.split(",")) {
+        integrantes.add(integrante.trim());
+    }
+    return integrantes;
+}
+```
+
+```mermaid
+graph LR
+    A[obtenerIntegrantes] --> B(System.out.print\n"Ingrese la lista...")
+    B --> C{Scanner.nextLine()}
+    C --> D(inputIntegrantes)
+    D --> E{inputIntegrantes.split(",")}
+    E --> F{for each integrante in\nintegrantes.split}
+    F --> G(integrante.trim())
+    G --> H{integrantes.add}
+    H --> I(return integrantes)
+```
