@@ -34,13 +34,13 @@ private static List<String> obtenerIntegrantes(Scanner scanner) {
 ```
 
 ```mermaid
-graph LR
-    A[obtenerIntegrantes] --> B(System.out.print\n"Ingrese la lista...")
-    B --> C{Scanner.nextLine()}
-    C --> D(inputIntegrantes)
-    D --> E{inputIntegrantes.split(",")}
-    E --> F{for each integrante in\nintegrantes.split}
-    F --> G(integrante.trim())
-    G --> H{integrantes.add}
-    H --> I(return integrantes)
+graph TD
+    A(Iniciar función) --> B(Imprimir solicitud de ingreso de integrantes)
+    B --> C(Leer línea de texto del Scanner)
+    C --> D(Crear nueva lista de String)
+    D --> E{Recorrer cada elemento de la línea de texto}
+    E -- Por cada elemento --> F(Agregar elemento recortado a la lista)
+    F --> E
+    E -- Terminar --> G(Retornar lista de integrantes)
+    G --> H(Finalizar función)
 ```
